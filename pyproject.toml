@@ -1,0 +1,59 @@
+
+[tool.ruff]
+show-fixes = true
+target-version = "py312"
+line-length = 120
+
+
+[tool.ruff.lint]
+select = [
+    "F",      # Pyflakes - checks source files for errors
+    "E",      # Pycodestyle - pep 8 style errors
+    "W",      # Pycodestyle - pep 8 style 
+    "C90",    # Cyclomatic complexity
+    "I",      # Isort - sorts imports
+    "N",      # PEP 8 Naming
+    "D102",   # Missing docstring in public method
+    "D103",   # Missing docstring in public function
+    "D207",   # Docstring is under-indented
+    "D208",   # Docstring is over-indented
+    "D419",   # Docstring is empty
+    "B006",   # Do not use mutable data structures for argument defaults
+    "B007",   # Loop control variable {name} not used within loop body
+    "UP",     # Pyupgrade - checks for outdated syntax
+    "ANN",    # Type annotations
+    "ASYNC",  # flake8-async (ASYNC)
+    "S",      # flake8-bandit
+    "B",      # flake8-bugbear
+    "C4",     # Use generators and comprehensions
+    "ICN",    # flake8-import-conventions
+    "RET502", # Do not implicitly return None in function able to return non-None value
+    "RET503", # Missing explicit return at the end of function able to return non-None value
+    "ARG",    # flake8-unused arguments
+    "PTH",    # flake8-use-Pathlib
+    "FIX",    # flake8-fixme
+    "ERA",    # Found commented-out code
+    "TRY002", # Tryceratops - Create your own exception
+    "PL",     # Pylint
+    "FAST",   # FastAPI
+    "PERF",   # Perflint
+]
+
+ignore = [
+    "ANN101",   # Missing type annotation for "self" in method
+    "ANN102",   # Missing type annotation for "self" in method
+    "E501",     # Line too long ({width} > {limit} characters)  
+    "PTH123",   # open() should be replaced by Path.open()
+    "PLR2004",  # Magic value used in comparison, consider replacing {value} with a constant variable
+    "S101",     # Use of assert detected
+    "S311",     # Standard pseudo-random generators are not suitable for cryptographic purposes 
+    "S301",     # `pickle` and modules that wrap it can be unsafe when used to deserialize untrusted data, possible security issue 
+    "S314",     # Using `xml` to parse untrusted data is known to be vulnerable to XML attacks; use `defusedxml` equivalents 
+]
+
+# Ignore directories that do not need linting
+mccabe.max-complexity = 10
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
