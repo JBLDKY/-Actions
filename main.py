@@ -1,5 +1,5 @@
 
-def foo(a: str, b: str, c: str) -> int:
+def foobar(a: str, b: str, c: str) -> int:
     if a:
         if b:
             if c:
