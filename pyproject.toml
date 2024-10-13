@@ -1,4 +1,3 @@
-
 [tool.ruff]
 show-fixes = true
 target-version = "py312"
@@ -9,7 +8,7 @@ line-length = 120
 select = [
     "F",      # Pyflakes - checks source files for errors
     "E",      # Pycodestyle - pep 8 style errors
-    "W",      # Pycodestyle - pep 8 style 
+    "W",      # Pycodestyle - pep 8 style warnings
     "C90",    # Cyclomatic complexity
     "I",      # Isort - sorts imports
     "N",      # PEP 8 Naming
@@ -41,7 +40,7 @@ select = [
 
 ignore = [
     "ANN101",   # Missing type annotation for "self" in method
-    "ANN102",   # Missing type annotation for "self" in method
+    "ANN102",   # Missing type annotation for "cls" in method
     "E501",     # Line too long ({width} > {limit} characters)  
     "PTH123",   # open() should be replaced by Path.open()
     "PLR2004",  # Magic value used in comparison, consider replacing {value} with a constant variable
@@ -54,6 +53,19 @@ ignore = [
 # Ignore directories that do not need linting
 mccabe.max-complexity = 10
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+preview = true
+
+
+[tool.ruff.lint.flake8-annotations]
+ignore-fully-untyped = true
+mypy-init-return = true
+suppress-none-returning = true
+allow-star-arg-any = true
+
+
+[tool.ruff.flake8-unused-arguments]
+ignore-variadic-names = true
+
 
 [tool.pytest.ini_options]
 pythonpath = "src"
