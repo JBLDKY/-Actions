@@ -36,10 +36,3 @@ def foobar(a: str, b: str, c: str) -> int:
             return 3
     else:
         return 4
-
-from enum import Enum, StrEnum
-
-class T(StrEnum):
-    a = "a"
-    b = "b"
-    c = "c"
