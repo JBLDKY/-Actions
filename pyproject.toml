@@ -9,7 +9,7 @@ line-length = 120
 select = [
     "F",      # Pyflakes - checks source files for errors
     "E",      # Pycodestyle - pep 8 style errors
-    "W",      # Pycodestyle - pep 8 style 
+    "W",      # Pycodestyle - pep 8 style warnings
     "C90",    # Cyclomatic complexity
     "I",      # Isort - sorts imports
     "N",      # PEP 8 Naming
